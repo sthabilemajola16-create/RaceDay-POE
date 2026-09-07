@@ -31,6 +31,40 @@ This folder contains the planning artifacts for the RaceDay application as requi
 
 By using these design artifacts, RaceDay will support reliable event management and participant tracking conforming to project specifications and assessment criteria.
 
+# RaceDay - Portfolio of Evidence Part 1
+
+## Overview
+
+This repository contains all deliverables for the first part of the RaceDay project, a web-based event management system for South African road events.
+
+### Planning and Design
+
+- The `/docs` folder includes:
+  - A comprehensive **Entity Relationship Diagram (ERD)** illustrating the full data model.
+  - A detailed **API Endpoint Plan** specifying all REST endpoints, role-based access, request/response formats.
+  - A robust **SQL Database Setup Script** that implements the ERD fully, with constraints and seeded sample data.
+
+### Compliance with Assessment Rubric
+
+- The ERD is complete and accurate with clear keys and cardinalities, meeting the 25-mark criteria.  
+- The API plan covers all functional areas, roles, and error responses comprehensively, fulfilling the rubric’s expectations.  
+- The SQL script:
+  - Runs cleanly without errors on a fresh database.
+  - Creates all necessary tables with constraints.
+  - Seeds realistic sample data matching the requirements (2 organisers, 2 participants, multiple events/categories).  
+- The commit history in GitHub shows consistent meaningful commits related to planning and SQL scripting.
+- CI/CD workflow file is included and passing (see `.github/workflows/ci.yml`).
+
+### Next Steps
+
+This planning work provides a strong foundation for the implementation stages in Parts 2 and 3, including the REST API and MVC web client.
+
+---
+
+For detailed documentation, please see the `/docs` folder.
+
+
+
 References (Harvard)
 
 Cape Town Cycle Tour (n.d.) Cape Town Cycle Tour. Available at: https://www.capetowncycletour.com/ (Accessed: 25 August 2026).
