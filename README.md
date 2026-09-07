@@ -69,7 +69,7 @@ References (Harvard)
 
 Cape Town Cycle Tour (n.d.) Cape Town Cycle Tour. Available at: https://www.capetowncycletour.com/ (Accessed: 5 August 2026).
 
-Comrades Marathon Association (n.d.) Comrades Marathon. Available at: https://www.comrades.com/ (Accessed: 25 August 2026).
+Comrades Marathon Association (n.d.) Comrades Marathon. Available at: https://www.comrades.com/ (Accessed: 5 August 2026).
 
 Connolly, T. and Begg, C. (2015) Database systems: a practical approach to design, implementation, and management. 6th edn. Harlow: Pearson.
 
