@@ -82,3 +82,17 @@ Sandhu, R.S., Coyne, E.J., Feinstein, H.L. and Youman, C.E. (1996) ‘Role-based
 W3Schools (n.d.a) HTTP request methods. Available at: https://www.w3schools.com/tags/ref_httpmethods.asp (Accessed: 11 August 2026).
 
 W3Schools (n.d.b) SQL foreign key constraint. Available at: https://www.w3schools.com/sql/sql_foreignkey.asp (Accessed: 16 August 2026)
+
+W3Schools (n.d.c) SQL CREATE TABLE. Available at: https://www.w3schools.com/sql/sql_create_table.asp (Accessed: 17 August 2026).
+
+W3Schools (n.d.d) SQL PRIMARY KEY constraint. Available at: https://www.w3schools.com/sql/sql_primarykey.asp (Accessed: 18 August 2026).
+
+W3Schools (n.d.e) SQL NOT NULL constraint. Available at: https://www.w3schools.com/sql/sql_notnull.asp (Accessed: 20 August 2026).
+
+W3Schools (n.d.f) SQL INSERT INTO. Available at: https://www.w3schools.com/sql/sql_insert.asp (Accessed: 20 August 2026).
+
+W3Schools (n.d.g) SQL UNIQUE constraint. Available at: https://www.w3schools.com/sql/sql_unique.asp (Accessed: 21 August 2026).
+
+W3Schools (n.d.h) SQL DEFAULT constraint. Available at: https://www.w3schools.com/sql/sql_default.asp (Accessed: 24 August 2026).
+
+W3Schools (n.d.i) SQL CHECK constraint. Available at: https://www.w3schools.com/sql/sql_check.asp (Accessed: 25 August 2026).
