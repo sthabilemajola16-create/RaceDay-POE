@@ -29,16 +29,7 @@ This folder contains the planning artifacts for the RaceDay application as requi
 
 ---
 
-By using these design artifacts, RaceDay will support reliable event management and participant tracking conforming to project specifications and assessment criteria.
-
-# RaceDay - Portfolio of Evidence Part 1
-
-## Overview
-
-This repository contains all deliverables for the first part of the RaceDay project, a web-based event management system for South African road events.
-
 For detailed documentation, please see the `/docs` folder.
-
 
 
 References 
