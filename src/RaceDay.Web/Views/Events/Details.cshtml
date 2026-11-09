@@ -1,0 +1,10 @@
+@using System.Text.Json
+@model Dictionary<string,object>
+@{ ViewData["Title"]="Event details"; JsonElement cats=Model.TryGetValue("categories",out var c)?(JsonElement)c:default; }
+<div class="page-title"><div class="eyebrow">RACE INFORMATION</div><h1>@Model.GetValueOrDefault("name")</h1><p>@Model.GetValueOrDefault("description")</p></div>
+<section class="glass detail"><p><b>Sport</b> · @Model.GetValueOrDefault("sportType")</p><p><b>Venue</b> · @Model.GetValueOrDefault("venue"), @Model.GetValueOrDefault("city"), @Model.GetValueOrDefault("province")</p><p><b>Start</b> · @Model.GetValueOrDefault("startDateTime")</p><p><b>Route</b> · @Model.GetValueOrDefault("routeSummary")</p>
+<h2>Available categories</h2>
+@if(cats.ValueKind==JsonValueKind.Array){foreach(var cat in cats.EnumerateArray()){<article class="event-card"><h3>@cat.GetProperty("name").GetString()</h3><p>@cat.GetProperty("distanceKm") km · R @cat.GetProperty("entryFeeZar")</p>
+@if(Context.Session.GetString("Role")=="Participant"){<form method="post" action="/Participant/Enrol">@Html.AntiForgeryToken()<input type="hidden" name="eventId" value="@Model.GetValueOrDefault("eventId")"/><input type="hidden" name="categoryId" value="@cat.GetProperty("categoryId").GetInt32()"/><button class="btn primary">Enter this category</button></form>}</article>}}
+@if(Context.Session.GetString("Role")=="Organiser"){<a class="btn ghost" href="/Events/Categories/@Model.GetValueOrDefault("eventId")">Manage categories</a><a class="btn ghost" href="/Events/Enrolments/@Model.GetValueOrDefault("eventId")">View enrolments</a>}
+<a class="btn ghost" href="/Events">Back to events</a></section>

@@ -1,0 +1,12 @@
+@using System.Text.Json
+@{ ViewData["Title"]="My RaceDay"; var role=Context.Session.GetString("Role"); }
+<div class="page-title"><div class="eyebrow">YOUR RACE SPACE</div><h1>My dashboard</h1><p>Welcome back. Your next steps and race history are in one place.</p></div>
+@if(role=="Participant"){
+<section class="glass"><h2>My event entries</h2>
+@foreach(var e in (ViewBag.Enrolments as List<Dictionary<string,object>> ?? new())){<article class="event-card"><h3>@e.GetValueOrDefault("eventName")</h3><p>Category: @e.GetValueOrDefault("categoryName") · Bib: @e.GetValueOrDefault("bibNumber") · Status: @e.GetValueOrDefault("status")</p></article>}
+@if(((List<Dictionary<string,object>>)ViewBag.Enrolments).Count==0){<p>You have no entries yet. Explore events to find your next finish line.</p>}<a class="btn primary" href="/Events">Explore events</a></section>
+<section class="glass"><h2>My results</h2>@foreach(var r in (ViewBag.Results as List<Dictionary<string,object>> ?? new())){<p>Position: @r.GetValueOrDefault("positionOverall") · Finish time: @r.GetValueOrDefault("finishTime") · @r.GetValueOrDefault("resultStatus")</p>}@if(((List<Dictionary<string,object>>)ViewBag.Results).Count==0){<p>Your results will appear here after an organiser publishes them.</p>}</section>
+}else{
+<section class="glass"><h2>Manage your events</h2><a class="btn primary" href="/Events/Create">Create an event</a>
+@foreach(var e in (ViewBag.Events as List<Dictionary<string,object>> ?? new())){<article class="event-card"><h3>@e.GetValueOrDefault("name")</h3><p>@e.GetValueOrDefault("startDateTime") · @e.GetValueOrDefault("venue")</p><a href="/Events/Edit/@e.GetValueOrDefault("eventId")">Edit</a> · <a href="/Events/Enrolments/@e.GetValueOrDefault("eventId")">View entries and capture results</a> · <a href="/Events/Categories/@e.GetValueOrDefault("eventId")">Manage categories</a><form method="post" action="/Events/Delete/@e.GetValueOrDefault("eventId")">@Html.AntiForgeryToken()<button class="btn danger" type="submit">Delete event</button></form></article>}
+</section>}

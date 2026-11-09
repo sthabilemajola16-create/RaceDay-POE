@@ -1,0 +1,6 @@
+@model List<Dictionary<string,object>>
+@{ViewData["Title"]="Event enrolments"; var id=(int)ViewBag.EventId;}
+<div class="page-title"><div class="eyebrow">ORGANISER WORKSPACE</div><h1>Event enrolments</h1><p>Review entrants and record race results after the event.</p></div>
+<section class="glass"><table class="data-table"><thead><tr><th>Participant</th><th>Category</th><th>Bib</th><th>Status</th><th>Capture result</th></tr></thead><tbody>
+@foreach(var e in Model){<tr><td>@e.GetValueOrDefault("participantName")</td><td>@e.GetValueOrDefault("categoryName")</td><td>@e.GetValueOrDefault("bibNumber")</td><td>@e.GetValueOrDefault("status")</td><td><form method="post" action="/Events/CaptureResult">@Html.AntiForgeryToken()<input type="hidden" name="id" value="@id"/><input type="hidden" name="enrolmentId" value="@e.GetValueOrDefault("enrolmentId")"/><input name="finishTime" placeholder="01:25:30"/><input name="positionOverall" type="number" min="1" placeholder="Position"/><select name="resultStatus"><option>Finished</option><option>DNF</option><option>DNS</option><option>DSQ</option></select><button class="btn primary">Save</button></form></td></tr>}
+</tbody></table>@if(Model.Count==0){<p>No enrolments have been received yet.</p>}</section>

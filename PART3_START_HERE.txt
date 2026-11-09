@@ -1,0 +1,19 @@
+RACEDAY PROG6212 – PART 3 WORKING PACKAGE
+
+START HERE
+1. Open RaceDay.sln in Visual Studio 2022.
+2. Check the API project connection string in src/RaceDay.Api/appsettings.json and update it for your SQL Server instance.
+3. Set the solution startup projects to start RaceDay.Api and RaceDay.Web. If Visual Studio does not support multiple startup projects automatically, start the API first and then the MVC project.
+4. Confirm the API URL in src/RaceDay.Web/appsettings.json matches the API's actual HTTP/HTTPS launch URL.
+5. Run the API and confirm Swagger opens. Then run RaceDay.Web and test the frontend.
+6. Run tests from the solution folder: dotnet test RaceDay.sln
+7. Read docs/LOCAL_VERIFICATION_STEPS.md and docs/PART3_IMPLEMENTATION_AND_VERIFICATION.md.
+8. Complete docs/RaceDay_Part3_Research_Report.docx: fill in your own student details and replace every red screenshot prompt with a genuine screenshot from your running application. Keep the report at 15 pages or fewer.
+
+IMPORTANT
+- The package includes a Part 3 MVC frontend and supporting documentation alongside the submitted API foundation.
+- Build and test results have NOT been independently verified in this environment. Verify locally before submission.
+- Database credentials, Azure Blob Storage credentials and cloud deployment settings must be configured by you where applicable.
+- Do not submit fabricated screenshots, test results, GitHub CI evidence or a demonstration video. Capture these from your own environment.
+- The source ZIP included a Part 1 PDF and ERD filenames containing a student number. Check that these belong to you before including those files in your final institutional submission. Replace/remove them if they are not yours.
+- The research report contains screenshot placeholders intentionally. It is not submission-ready until you replace them and fill in your details.

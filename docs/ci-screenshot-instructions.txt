@@ -1,0 +1,5 @@
+Save a screenshot of a successful GitHub Actions run (green tick) as:
+
+    docs/ci-green-build.png
+
+The README embeds that file. Do not commit a fake screenshot.

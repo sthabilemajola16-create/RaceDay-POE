@@ -1,0 +1,3 @@
+@model RaceDay.Web.Models.LoginVm
+
+@{ViewData["Title"]="Sign in";}<section class="auth glass"><div class="eyebrow">WELCOME BACK</div><h1>Sign in to RaceDay</h1><p>Pick up where your training takes you.</p><div asp-validation-summary="ModelOnly" class="errors"></div><form method="post">@Html.AntiForgeryToken()<label asp-for="Email"></label><input asp-for="Email" placeholder="you@example.com"><span asp-validation-for="Email"></span><label asp-for="Password"></label><input asp-for="Password"><span asp-validation-for="Password"></span><button class="btn primary full">Sign in</button></form><p>New to RaceDay? <a href="/Account/Register">Create an account</a></p></section>

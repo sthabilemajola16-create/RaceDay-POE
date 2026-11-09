@@ -1,0 +1,1 @@
+Place genuine screenshots captured from your running local application here. Do not use fabricated or illustrative screenshots as implementation evidence.
