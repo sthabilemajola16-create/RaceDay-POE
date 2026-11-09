@@ -1,131 +1,116 @@
 # RaceDay – Race Event Management System
 
+**Module:** PROG6212 – Programming 2B  
+**Project:** RaceDay Portfolio of Evidence (POE)  
+**GitHub Repository:** https://github.com/sthabilemajola16-create/RaceDay-POE
+
 ## 1. Project Overview
 
 RaceDay is a web-based race event management system developed as part of the PROG6212 Portfolio of Evidence (POE).
 
-The application provides a platform where participants can explore sporting events, register for available race categories and view their event entries and recorded results. Organisers can create and manage events, manage race categories, review participant enrolments and capture race results.
+The application provides a platform where participants can explore sporting events, register for available race categories and view their event entries and recorded results.
 
-The project demonstrates the design, development, testing and implementation of a database-driven web application supported by a RESTful API.
+Organisers can create and manage events, manage race categories, review participant enrolments and capture race results.
+
+The solution consists of an ASP.NET Core Web API, an ASP.NET Core MVC web application and an automated testing project.
 
 ## 2. Project Objectives
 
 The main objectives of RaceDay are to:
 
 - Provide an accessible platform for discovering sporting events.
-- Support participant registration and authentication.
+- Allow participants to register and enrol in race categories.
 - Allow organisers to create and manage sporting events.
-- Enable participants to enrol in available event categories.
-- Support race result recording and viewing.
-- Provide secure, role-based access to application features.
-- Demonstrate database integration and REST API functionality.
-- Provide a responsive and user-friendly interface.
+- Support participant enrolment and bib number allocation.
+- Allow organisers to capture race results.
+- Provide participants with access to their event history and results.
+- Demonstrate secure authentication and role-based access control.
+- Implement a database-driven application supported by a RESTful API.
 
 ## 3. Main Features
 
-### Participant Features
+### 3.1 Participant Features
 
-- Register a new account and log in.
-- Explore available sporting events.
+- User registration and login.
+- Browse available sporting events.
 - View event information and available categories.
-- Enter available race categories.
+- Enrol in event categories.
 - View confirmed event entries.
-- View recorded race results, including finishing position and finish time.
+- View allocated bib numbers.
+- View recorded race results.
 
-### Organiser Features
+### 3.2 Organiser Features
 
-- Access the organiser dashboard.
-- Create and manage sporting events.
-- Edit event information.
-- Manage event categories.
+- Organiser login.
+- Create sporting events.
+- Edit and manage existing events.
+- Add and manage race categories.
 - View participant enrolments.
-- Capture race finishing times, positions and result statuses.
+- Review participant categories and bib numbers.
+- Capture finishing times and positions.
+- Update race result statuses.
 
-### API Features
+### 3.3 Event Management
 
-- RESTful API endpoints.
-- Database-backed application functionality.
-- Authentication and role-based authorisation.
-- Swagger API documentation.
-- API integration with the web application.
+RaceDay supports different sporting event types, including:
 
-## 4. Technologies Used
+- Running.
+- Walking.
+- Cycling.
+
+Each event can contain information such as its name, venue, location, date, route and available categories.
+
+## 4. User Roles
+
+| User Role | Responsibilities |
+|---|---|
+| Participant | Browse events, enrol in categories and view results. |
+| Organiser | Create events, manage categories, review enrolments and capture results. |
+| Public Visitor | Access public event information and registration pages. |
+
+The application uses authentication and role-based authorisation to control access to protected functionality.
+
+## 5. Technologies Used
 
 | Technology | Purpose |
 |---|---|
 | C# | Application programming language |
-| ASP.NET Core | Web application and API development |
-| .NET 8 | Application framework |
-| ASP.NET Core MVC / Razor | Web interface |
-| SQL Server | Database management |
-| Entity Framework Core | Database access |
+| .NET 8 | Development platform |
+| ASP.NET Core Web API | Backend services and API endpoints |
+| ASP.NET Core MVC | Web application interface |
+| SQL Server | Relational database |
 | Swagger / OpenAPI | API documentation and testing |
-| HTML and CSS | Frontend structure and styling |
+| xUnit | Automated testing |
+| HTML | Web page structure |
+| CSS | Application styling |
 | JavaScript | Frontend interaction |
-| Docker Compose | Database and service configuration |
-| Git and GitHub | Version control and project hosting |
-| Visual Studio 2022 | Development environment |
+| Git | Version control |
+| GitHub | Source code hosting |
+| Docker Compose | Container configuration |
 
-## 5. User Roles
+## 6. Project Structure
 
-RaceDay supports two main user roles:
-
-**Participant**
-- Browse events.
-- Enter race categories.
-- View event entries.
-- View recorded race results.
-
-**Organiser**
-- Create and edit events.
-- Manage categories.
-- Review enrolments.
-- Capture race results.
-
-Access to protected functionality is controlled through authentication and role-based authorisation.
-
-## 6. User Interface and Design
-
-The RaceDay interface uses a purple glass-inspired visual theme with contrasting text, rounded cards and interactive navigation.
-
-The design aims to provide:
-- Clear navigation.
-- Consistent page layouts.
-- Readable content.
-- Responsive presentation.
-- Distinct participant and organiser workflows.
-- Clear feedback during application interactions.
-
-The interface includes login, registration, event exploration, event details, participant dashboards, organiser dashboards, category management and result capture pages.
-
-## 7. Project Structure
-
-The solution is organised into three main projects:
+The solution is organised into the following structure:
 
 ```text
 RaceDay-POE/
 │
+├── .github/
+│
+├── docs/
+│   └── Project documentation
+│
 ├── src/
 │   ├── RaceDay.Api/
-│   │   ├── Controllers/
-│   │   ├── Models/
-│   │   ├── Services/
-│   │   ├── Program.cs
-│   │   └── Dockerfile
+│   │   └── Backend API
 │   │
 │   └── RaceDay.Web/
-│       ├── Controllers/
-│       ├── Models/
-│       ├── Services/
-│       ├── Views/
-│       ├── wwwroot/
-│       └── Program.cs
+│       └── MVC web application
 │
 ├── tests/
 │   └── RaceDay.Api.Tests/
+│       └── Automated tests
 │
-├── docs/
-├── .github/
 ├── .env.example
 ├── .gitignore
 ├── docker-compose.yml
@@ -133,72 +118,136 @@ RaceDay-POE/
 └── README.md
 ```
 
+## 7. System Requirements
+
+The following software is required to run the application:
+
+- Windows 10 or Windows 11.
+- .NET 8 SDK.
+- Visual Studio 2022 with the ASP.NET and web development workload.
+- SQL Server.
+- Git for cloning the repository.
+- Docker Desktop if using Docker Compose.
+
 ## 8. Installation and Setup
 
-### Requirements
+### Step 1: Clone the Repository
 
-Install the following software:
-
-- Visual Studio 2022.
-- .NET 8 SDK.
-- SQL Server or the configured Docker database service.
-- Git.
-- Docker Desktop (if using Docker Compose).
-
-### Clone the Repository
+Open PowerShell or a terminal and run:
 
 ```bash
 git clone https://github.com/sthabilemajola16-create/RaceDay-POE.git
 ```
 
-Navigate into the project directory:
+Navigate into the project folder:
 
 ```bash
 cd RaceDay-POE
 ```
 
-### Restore Dependencies
+### Step 2: Open the Solution
+
+Open the following file using Visual Studio 2022:
+
+```text
+RaceDay.sln
+```
+
+Allow Visual Studio to restore the required NuGet packages.
+
+### Step 3: Configure the Database
+
+Configure the SQL Server connection using the settings expected by the API project.
+
+Use your own local database connection details.
+
+Check the database setup instructions and scripts included in the repository before applying any database changes.
+
+### Step 4: Configure Environment Settings
+
+The repository contains an `.env.example` file.
+
+Use it as a reference when creating your local configuration.
+
+Do not upload passwords, database credentials, connection strings containing secrets or API keys to GitHub.
+
+### Step 5: Restore Dependencies
+
+From the solution directory, run:
 
 ```bash
 dotnet restore
 ```
 
-### Build the Solution
+### Step 6: Build the Application
+
+Run:
 
 ```bash
 dotnet build
 ```
 
-### Configure Environment Variables
+### Step 7: Run the Application
 
-Review `.env.example` and create a local `.env` file if you are using Docker Compose.
+Start the API:
 
-Configure your own SQL Server password and any required Azure Blob Storage connection settings locally.
-
-**Security:** Never upload `.env`, actual passwords, private connection strings or Azure access keys to GitHub.
-
-### Run the Application
-
-Open `RaceDay.sln` in Visual Studio 2022.
-
-Configure the startup projects according to your local solution setup:
-
-- RaceDay.Api
-- RaceDay.Web
-
-Start the application using Visual Studio.
-
-The API provides Swagger documentation when its Swagger interface is enabled.
-
-## 9. Automated Testing
-
-The project includes a separate automated test project:
-
-```text
-tests/RaceDay.Api.Tests/
+```bash
+dotnet run --project src/RaceDay.Api
 ```
 
-Run the tests from the solution directory:
+Open a second terminal and start the web application:
+
+```bash
+dotnet run --project src/RaceDay.Web
+```
+
+Use the local URLs displayed in the terminal when the applications start.
+
+The MVC application must use the correct API base URL.
+
+Alternatively, configure Visual Studio to start both `RaceDay.Api` and `RaceDay.Web` together.
+
+## 9. API Documentation
+
+RaceDay provides API documentation through Swagger/OpenAPI.
+
+When the API is running, open:
+
+```text
+http://localhost:5188/swagger
+```
+
+If the API uses a different port, use the Swagger URL displayed by the application.
+
+Swagger allows developers to explore available endpoints and test API requests.
+
+## 10. Database Management
+
+RaceDay uses SQL Server for relational data storage.
+
+The database supports the application's main operations, including:
+
+- User accounts.
+- Organiser and participant roles.
+- Sporting events.
+- Race categories.
+- Participant enrolments.
+- Bib numbers.
+- Race results.
+
+Database configuration must match the SQL Server instance used when running the application.
+
+## 11. Automated Testing
+
+The project includes an automated test project:
+
+```text
+tests/RaceDay.Api.Tests
+```
+
+The tests cover application functionality, including authentication, enrolments and event and role-related behaviour.
+
+To execute the tests, run:
 
 ```bash
 dotnet test
@@ -206,105 +255,137 @@ dotnet test
 
 ### Verified Test Results
 
-The following results were obtained during the final local test run on 9 November 2026:
+The test execution captured during development produced the following results:
 
-| Test measurement | Result |
+| Test Measure | Result |
 |---|---:|
-| Total tests | 19 |
+| Total Tests | 19 |
 | Passed | 19 |
 | Failed | 0 |
 | Skipped | 0 |
-| Test duration | 8.4 seconds |
+| Duration | 8.4 seconds |
 
-The complete solution also built successfully:
+The development verification also showed successful builds for:
 
-| Project | Build result |
-|---|---|
-| RaceDay.Web | Succeeded |
-| RaceDay.Api | Succeeded |
-| RaceDay.Api.Tests | Succeeded |
+- RaceDay.Web
+- RaceDay.Api
+- RaceDay.Api.Tests
 
-These results demonstrate that the solution compiled and that all 19 automated tests passed in the recorded test run.
+All three projects successfully built targeting .NET 8.
 
-## 10. API Documentation
+These results reflect the recorded local test run. Run the commands again after making changes to verify the latest version.
 
-RaceDay provides Swagger/OpenAPI documentation for exploring and testing the available API endpoints.
+## 12. Security
 
-Swagger can be accessed through the API application's Swagger interface when the API is running and Swagger is enabled.
+Security is an important part of the RaceDay application.
 
-It provides an interface for inspecting API operations, reviewing request and response structures and testing supported endpoints.
-
-## 11. Database
-
-SQL Server is used for application data storage.
-
-The database supports the information required for:
-- User accounts and roles.
-- Sporting events.
-- Event categories.
-- Participant enrolments.
-- Race results.
-- Related application records.
-
-Database configuration should be supplied through the appropriate local application settings and environment variables.
-
-## 12. Security Considerations
-
-The application incorporates security measures including:
+The system includes:
 
 - User authentication.
 - Role-based access control.
-- Password hashing.
-- Protected application operations.
-- Anti-forgery protection for applicable form submissions.
+- Protected organiser functionality.
+- Participant access restrictions.
+- Password protection.
 - Environment-based configuration for sensitive settings.
 
-Credentials and secrets must remain outside the public GitHub repository.
+Sensitive configuration files must remain local and must not be committed to the public GitHub repository.
 
-## 13. Screenshots and Demonstration
+## 13. User Interface and Design
 
-Screenshots of the actual running application should be added to this section to demonstrate:
+RaceDay uses a purple glass-inspired visual theme.
 
-1. Login and registration.
+The interface includes:
+
+- Navigation between application sections.
+- Registration and login pages.
+- Participant dashboard.
+- Organiser dashboard.
+- Event listing and details pages.
+- Category management pages.
+- Enrolment and result management pages.
+
+The design aims to provide a consistent and accessible experience across the main application workflows.
+
+## 14. Screenshots and Demonstration Evidence
+
+The following screenshots should be included as evidence of the working application:
+
+1. Registration and login page.
 2. Participant dashboard.
-3. Event exploration and event details.
-4. Event category enrolment.
-5. Organiser dashboard.
-6. Event creation and category management.
-7. Participant enrolments.
-8. Race result capture.
-9. Participant results dashboard.
-10. Swagger API documentation.
+3. Available sporting events.
+4. Event details and categories.
+5. Successful participant enrolment.
+6. Organiser dashboard.
+7. Event creation.
+8. Category management.
+9. Participant enrolment management.
+10. Race result capture.
+11. Participant dashboard displaying recorded results.
+12. Swagger API documentation.
+13. Successful application build.
+14. Successful automated test execution.
 
-A demonstration video should also be included when available.
+Only genuine screenshots captured from the running application should be used.
 
-## 14. Future Improvements
+### Demonstration Video
 
-Potential improvements include:
+A demonstration video should show:
 
-- Online payment integration.
-- Automated participant notifications.
-- Enhanced event search and filtering.
-- Additional accessibility improvements.
-- More detailed race analytics and reporting.
-- Expanded automated UI and integration testing.
+- Participant registration and login.
+- Browsing available events.
+- Enrolling in an event category.
+- Viewing participant entries.
+- Organiser login.
+- Creating and managing an event.
+- Managing race categories.
+- Reviewing enrolments.
+- Capturing race results.
+- Viewing recorded results as a participant.
+- Swagger API documentation.
+- Automated test results.
 
-## 15. Conclusion
+Add the actual video link here after uploading the completed demonstration:
 
-RaceDay demonstrates the development of a database-driven race event management system using C#, ASP.NET Core, SQL Server and a RESTful API.
+**Video Link:** To be added.
 
-The application supports participant and organiser workflows, including event management, category enrolment and race result recording.
+## 15. Further Verification
 
-The final local verification completed successfully with all three solution projects building and all 19 automated tests passing.
+The following items should be checked in the final submission environment:
 
-## 16. Repository
+- [ ] Fresh installation using the README instructions.
+- [ ] Database configuration and connectivity.
+- [ ] Participant authentication.
+- [ ] Organiser authentication.
+- [ ] Role-based access restrictions.
+- [ ] Event creation and editing.
+- [ ] Category creation and management.
+- [ ] Participant enrolment persistence.
+- [ ] Result capture and participant result visibility.
+- [ ] Keyboard navigation and accessibility.
+- [ ] Form labels and visible focus indicators.
+- [ ] Colour contrast and WCAG 2.0 considerations.
+- [ ] Docker configuration, if included in the final demonstration.
+- [ ] Genuine application screenshots.
+- [ ] Final demonstration video.
 
-**GitHub Repository:**  
-https://github.com/sthabilemajola16-create/RaceDay-POE
+## 16. References
 
-**Module:** PROG6212  
-**Project:** RaceDay – Race Event Management System
+Fielding, R.T. (2000) *Architectural styles and the design of network-based software architectures*. Doctoral dissertation. University of California, Irvine.
+
+Microsoft (n.d.) *ASP.NET Core documentation*. Available at: https://learn.microsoft.com/aspnet/core
+
+Microsoft (n.d.) *.NET documentation*. Available at: https://learn.microsoft.com/dotnet
+
+Microsoft (n.d.) *SQL Server documentation*. Available at: https://learn.microsoft.com/sql/
+
+Sandhu, R.S., Coyne, E.J., Feinstein, H.L. and Youman, C.E. (1996) ‘Role-based access control models’, *IEEE Computer*, 29(2), pp. 38–47.
+
+World Wide Web Consortium (W3C) (2008) *Web Content Accessibility Guidelines (WCAG) 2.0*. Available at: https://www.w3.org/TR/WCAG20/
 
 ---
 
-*This README describes the project implementation and the verified local build and test results. Screenshots, demonstration video and any additional evidence should be added from the actual running application.*
+**Project:** RaceDay – Race Event Management System  
+**Module:** PROG6212  
+**Repository:** https://github.com/sthabilemajola16-create/RaceDay-POE
+
+This README documents the RaceDay project, its features, technologies, setup instructions and development verification results.
